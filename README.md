@@ -5,8 +5,6 @@ In this lab, you will practice building user interfaces in Flutter and connectin
 
 ## Prerequisites
 Ensure your Flutter environment is set up and the required dependencies are in your `pubspec.yaml` file:
-- `fluttertoast: ^8.2.4` (or latest)
-
 Run `flutter pub get` before starting.
 
 ## Instructions
@@ -35,10 +33,4 @@ Navigate through the `lib/screens/` and `lib/widget/` directories. You will find
 - **Key Widgets to use:** `TextField`, `ElevatedButton`.
 - **Task:** Create an input field for the Student ID bound to `idController`. Add a button that calls `Database().deleteStudent()` and triggers a success `Fluttertoast`.
 
-## Helpful Resources
-- [Flutter Layouts](https://docs.flutter.dev/ui/layout)
-- [FutureBuilder Documentation](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
-- [Navigator Documentation](https://docs.flutter.dev/ui/navigation)
 
-## Submission
-*Include your specific submission guidelines, module codes, or deadlines here.*
