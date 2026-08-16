@@ -1,17 +1,44 @@
-# crud_app
+# Lab Exercise: Flutter CRUD UI Implementation
 
-A new Flutter project.
+## Objective
+In this lab, you will practice building user interfaces in Flutter and connecting them to existing backend logic. The boilerplate code, state management, and database controllers have been provided for you. Your task is to implement the widget trees for the Read, Update, and Delete screens.
 
-## Getting Started
+## Prerequisites
+Ensure your Flutter environment is set up and the required dependencies are in your `pubspec.yaml` file:
+- `fluttertoast: ^8.2.4` (or latest)
 
-This project is a starting point for a Flutter application.
+Run `flutter pub get` before starting.
 
-A few resources to get you started if this is your first Flutter project:
+## Instructions
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Navigate through the `lib/screens/` and `lib/widget/` directories. You will find several files with `// TODO:` comments inside the `_bodyWidget()` or `build()` methods. Replace the placeholder widgets with the correct Flutter layout components.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Files to Modify:
+
+#### 1. `lib/screens/read.dart`
+- **Goal:** Display a list of students fetched from the database.
+- **Key Widgets to use:** `FutureBuilder`, `CircularProgressIndicator`, `ListView.builder`.
+- **Task:** Consume the `studentDetailsListFuture`. Handle the loading and error states. When data is available, render a list of `StudentCard` widgets.
+
+#### 2. `lib/widget/student_card.dart`
+- **Goal:** Create a visually appealing card to display individual student details.
+- **Key Widgets to use:** `Card`, `Padding`, `Column`, `Row`, `IconButton`, `Text`.
+- **Task:** Display the student's name, ID, and degree. Implement an edit button that uses `Navigator.push()` to route the user to the `UpdateScreen`, passing the student's data along.
+
+#### 3. `lib/screens/update.dart`
+- **Goal:** Build a form to edit existing student data.
+- **Key Widgets to use:** `TextField`, `ElevatedButton`, `Column`.
+- **Task:** Create text fields bound to the provided controllers (`nameController`, `idController`, `degreeController`). Add a submit button that compiles the data into a `Map` and calls the `Database().updateStudentDetails()` method.
+
+#### 4. `lib/screens/delete.dart`
+- **Goal:** Build a simple screen to remove a student record by ID.
+- **Key Widgets to use:** `TextField`, `ElevatedButton`.
+- **Task:** Create an input field for the Student ID bound to `idController`. Add a button that calls `Database().deleteStudent()` and triggers a success `Fluttertoast`.
+
+## Helpful Resources
+- [Flutter Layouts](https://docs.flutter.dev/ui/layout)
+- [FutureBuilder Documentation](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
+- [Navigator Documentation](https://docs.flutter.dev/ui/navigation)
+
+## Submission
+*Include your specific submission guidelines, module codes, or deadlines here.*
